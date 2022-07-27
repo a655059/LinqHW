@@ -60,6 +60,12 @@ namespace MyHomeWork
             this.nwDataSet1 = new LinqLabs.NWDataSet();
             this.ordersTableAdapter1 = new LinqLabs.NWDataSetTableAdapters.OrdersTableAdapter();
             this.order_DetailsTableAdapter1 = new LinqLabs.NWDataSetTableAdapters.Order_DetailsTableAdapter();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button5 = new System.Windows.Forms.Button();
+            this.button7 = new System.Windows.Forms.Button();
+            this.button8 = new System.Windows.Forms.Button();
+            this.button9 = new System.Windows.Forms.Button();
+            this.button10 = new System.Windows.Forms.Button();
             this.tableLayoutPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).BeginInit();
@@ -189,6 +195,12 @@ namespace MyHomeWork
             // 
             // splitContainer1.Panel1
             // 
+            this.splitContainer1.Panel1.Controls.Add(this.button10);
+            this.splitContainer1.Panel1.Controls.Add(this.button9);
+            this.splitContainer1.Panel1.Controls.Add(this.button8);
+            this.splitContainer1.Panel1.Controls.Add(this.button7);
+            this.splitContainer1.Panel1.Controls.Add(this.button5);
+            this.splitContainer1.Panel1.Controls.Add(this.button3);
             this.splitContainer1.Panel1.Controls.Add(this.button36);
             this.splitContainer1.Panel1.Controls.Add(this.label3);
             this.splitContainer1.Panel1.Controls.Add(this.label9);
@@ -216,12 +228,12 @@ namespace MyHomeWork
             // button36
             // 
             this.button36.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.button36.Location = new System.Drawing.Point(61, 269);
+            this.button36.Location = new System.Drawing.Point(11, 249);
             this.button36.Margin = new System.Windows.Forms.Padding(4);
             this.button36.Name = "button36";
-            this.button36.Size = new System.Drawing.Size(372, 38);
+            this.button36.Size = new System.Drawing.Size(130, 38);
             this.button36.TabIndex = 147;
-            this.button36.Text = "搜尋 班級學生成績";
+            this.button36.Text = "共幾個成績";
             this.button36.UseVisualStyleBackColor = false;
             this.button36.Click += new System.EventHandler(this.button36_Click);
             // 
@@ -427,6 +439,78 @@ namespace MyHomeWork
             // 
             this.order_DetailsTableAdapter1.ClearBeforeFill = true;
             // 
+            // button3
+            // 
+            this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.button3.Location = new System.Drawing.Point(11, 291);
+            this.button3.Margin = new System.Windows.Forms.Padding(4);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(130, 38);
+            this.button3.TabIndex = 149;
+            this.button3.Text = "前三個學員成績";
+            this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // button5
+            // 
+            this.button5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.button5.Location = new System.Drawing.Point(149, 249);
+            this.button5.Margin = new System.Windows.Forms.Padding(4);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(130, 38);
+            this.button5.TabIndex = 150;
+            this.button5.Text = "後兩個學員成績";
+            this.button5.UseVisualStyleBackColor = false;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
+            // 
+            // button7
+            // 
+            this.button7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.button7.Location = new System.Drawing.Point(149, 291);
+            this.button7.Margin = new System.Windows.Forms.Padding(4);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(130, 38);
+            this.button7.TabIndex = 151;
+            this.button7.Text = "找 a b c";
+            this.button7.UseVisualStyleBackColor = false;
+            this.button7.Click += new System.EventHandler(this.button7_Click);
+            // 
+            // button8
+            // 
+            this.button8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.button8.Location = new System.Drawing.Point(287, 249);
+            this.button8.Margin = new System.Windows.Forms.Padding(4);
+            this.button8.Name = "button8";
+            this.button8.Size = new System.Drawing.Size(130, 38);
+            this.button8.TabIndex = 152;
+            this.button8.Text = "找 b";
+            this.button8.UseVisualStyleBackColor = false;
+            this.button8.Click += new System.EventHandler(this.button8_Click);
+            // 
+            // button9
+            // 
+            this.button9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.button9.Location = new System.Drawing.Point(287, 291);
+            this.button9.Margin = new System.Windows.Forms.Padding(4);
+            this.button9.Name = "button9";
+            this.button9.Size = new System.Drawing.Size(130, 38);
+            this.button9.TabIndex = 153;
+            this.button9.Text = "找 b 以外";
+            this.button9.UseVisualStyleBackColor = false;
+            this.button9.Click += new System.EventHandler(this.button9_Click);
+            // 
+            // button10
+            // 
+            this.button10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.button10.Location = new System.Drawing.Point(425, 291);
+            this.button10.Margin = new System.Windows.Forms.Padding(4);
+            this.button10.Name = "button10";
+            this.button10.Size = new System.Drawing.Size(130, 38);
+            this.button10.TabIndex = 154;
+            this.button10.Text = "找數學<60";
+            this.button10.UseVisualStyleBackColor = false;
+            this.button10.Click += new System.EventHandler(this.button10_Click);
+            // 
             // Frm作業_1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
@@ -459,10 +543,6 @@ namespace MyHomeWork
 
         }
 
-        private void button36_Click(object sender, EventArgs e)
-        {
-            
-        }
 
         #endregion
 
@@ -494,5 +574,11 @@ namespace MyHomeWork
         private LinqLabs.NWDataSet nwDataSet1;
         private LinqLabs.NWDataSetTableAdapters.OrdersTableAdapter ordersTableAdapter1;
         private LinqLabs.NWDataSetTableAdapters.Order_DetailsTableAdapter order_DetailsTableAdapter1;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button button7;
+        private System.Windows.Forms.Button button8;
+        private System.Windows.Forms.Button button9;
+        private System.Windows.Forms.Button button10;
     }
 }
