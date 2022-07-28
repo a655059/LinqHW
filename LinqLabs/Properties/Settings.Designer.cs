@@ -32,5 +32,16 @@ namespace LinqLabs.Properties {
                 return ((string)(this["NorthwindConnectionString"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-EKRVM5K;Initial Catalog=AdventureWorks2019;Integrated Securit" +
+            "y=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False")]
+        public string AdventureWorks2019ConnectionString {
+            get {
+                return ((string)(this["AdventureWorks2019ConnectionString"]));
+            }
+        }
     }
 }

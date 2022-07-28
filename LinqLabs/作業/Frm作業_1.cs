@@ -25,6 +25,28 @@ namespace MyHomeWork
                                             new Student{ Name = "fff", Class = "CS_102", Chi = 80, Eng = 80, Math = 80, Gender = "Female" },
 
                                           };
+
+            this.ordersTableAdapter1.Fill(this.nwDataSet1.Orders);
+            this.order_DetailsTableAdapter1.Fill(this.nwDataSet1.Order_Details);
+
+            foreach (DataRow a in nwDataSet1.Orders.Rows)
+            {
+                foreach (DataColumn c in nwDataSet1.Orders.Columns)
+                {
+                    if (a.IsNull(c))
+                    {
+                        a.Delete();
+                        break;
+                    }
+                }
+            }
+            nwDataSet1.AcceptChanges();
+
+            comboBox1.Items.Clear();
+            comboBox1.Items.AddRange(nwDataSet1.Orders.Select(p => p.OrderDate.Year.ToString()).Distinct().ToArray());
+
+            comboBox1.SelectedIndex = 0;
+
         }
         List<Student> students_scores;
 
@@ -124,24 +146,6 @@ namespace MyHomeWork
             this.dataGridView1.DataSource = q.ToList();
         }
 
-        private void Frm作業_1_Load(object sender, EventArgs e)
-        {
-            this.ordersTableAdapter1.Fill(this.nwDataSet1.Orders);
-            this.order_DetailsTableAdapter1.Fill(this.nwDataSet1.Order_Details);
-
-            foreach (DataRow a in nwDataSet1.Orders.Rows)
-            {
-                foreach (DataColumn c in nwDataSet1.Orders.Columns)
-                {
-                    if (a.IsNull(c))
-                    {
-                        a.Delete();
-                        break;
-                    }
-                }
-            }
-            nwDataSet1.AcceptChanges();
-        }
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -231,6 +235,26 @@ namespace MyHomeWork
                     where p.Math <60
                     select p;
             dataGridView1.DataSource = q.ToList();
+        }
+
+        private void button11_Click(object sender, EventArgs e)
+        {
+            var q = from p in students_scores
+                    where p.Name == "aaa" || p.Name == "bbb"
+                    select new { Name = p.Name, Class = p.Class, Chi = p.Chi, Math = p.Math, Gender = p.Gender };
+            dataGridView1.DataSource = q.ToList();
+        }
+
+        private void button15_Click(object sender, EventArgs e)
+        {
+            var q = from p in students_scores
+                    select new { Name = p.Name, Class = p.Class, Chi = p.Chi, Eng = p.Eng, Math = p.Math, Gender = p.Gender, Sum = p.Chi+ p.Eng+ p.Math, Min = new int[] { p.Chi , p.Eng , p.Math }.Min(), Max = new int[] { p.Chi, p.Eng, p.Math }.Max(), Avg = $"{new int[] { p.Chi, p.Eng, p.Math }.Average():N2}"  };
+            dataGridView1.DataSource = q.ToList();
+        }
+
+        private void splitContainer1_Panel1_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }
