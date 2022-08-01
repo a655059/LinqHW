@@ -169,15 +169,15 @@ namespace LinqLabs.作業
         {
             var q = from p in dbcontext.Order_Details
                     select p;
-            MessageBox.Show(q.Sum(i => i.UnitPrice * i.Quantity).ToString()+"元");
+            MessageBox.Show($"{q.Sum(i => (double)i.UnitPrice * i.Quantity * (1 - i.Discount)):N2}元");
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             var q = from n in dbcontext.Order_Details.AsEnumerable()
                     group n by n.Order.EmployeeID into g
-                    orderby g.Sum(i => i.Quantity * i.UnitPrice) descending
-                    select new { EmployeeID = g.Key, MySales = g.Sum(i => i.Quantity*i.UnitPrice)};
+                    orderby g.Sum(i => i.Quantity * (double)i.UnitPrice * (1 - i.Discount)) descending
+                    select new { EmployeeID = g.Key, MySales = $"{g.Sum(i => i.Quantity * (double)i.UnitPrice * (1 - i.Discount)):N2}" };
             dataGridView1.DataSource = q.Take(5).ToList();
         }
 
