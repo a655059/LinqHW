@@ -39,7 +39,21 @@ namespace LinqLabs.作業
                     mid.Add(i);
                 }
             }
-            MessageBox.Show($"全部:{String.Join(" ",nums)}\r\n小的:{String.Join(" ",small)}\r\n中的:{String.Join(" ", mid)}\r\n大的:{String.Join(" ", large)}");
+            TreeNode x = treeView1.Nodes.Add($"小 ({small.Count})");
+            foreach(int i in small)
+            {
+                x.Nodes.Add(i.ToString());
+            }
+            x = treeView1.Nodes.Add($"中 ({mid.Count})");
+            foreach (int i in mid)
+            {
+                x.Nodes.Add(i.ToString());
+            }
+            x = treeView1.Nodes.Add($"大 ({large.Count})");
+            foreach (int i in large)
+            {
+                x.Nodes.Add(i.ToString());
+            }
         }
         string MyKey1(long n)
         {
