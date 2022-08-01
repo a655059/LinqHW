@@ -6,7 +6,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using LinqLabs.作業;
-
+using LinqLabs;
 
 namespace Starter
 {
@@ -31,7 +31,7 @@ namespace Starter
 
             //Application.Run(new FrmHelloLinq());
 
-            Application.Run(new Frm作業_3()); 
+            Application.Run(new Frm_main()); 
         }
     }
 }
